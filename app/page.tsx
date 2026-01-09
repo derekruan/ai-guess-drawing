@@ -62,7 +62,7 @@ export default function Home() {
 
         {/* 画布 */}
         <div className="mb-6 flex justify-center">
-          <DrawingCanvas ref={canvasRef} />
+          <DrawingCanvas canvasRef={canvasRef} />
         </div>
 
         {/* 猜测按钮 */}

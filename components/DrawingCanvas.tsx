@@ -1,13 +1,14 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useState, type RefObject } from 'react';
 
 interface DrawingCanvasProps {
   onImageReady?: (imageData: string) => void;
+  canvasRef: RefObject<HTMLCanvasElement>;
 }
 
-export default function DrawingCanvas({ onImageReady }: DrawingCanvasProps) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+export default function DrawingCanvas({ onImageReady, canvasRef }: DrawingCanvasProps) {
+  
   const [isDrawing, setIsDrawing] = useState(false);
   const [brushSize, setBrushSize] = useState(3);
   const [brushColor, setBrushColor] = useState('#000000');
